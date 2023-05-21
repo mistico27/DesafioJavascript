@@ -1,0 +1,17 @@
+.post-card {
+    &__author-picture{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+    .post-card__author-name, 
+    .post-card__creation-date{
+        margin: 0;
+        font-size: 14px;
+    }
+    &:not(:first-of-type) {
+        .post-card__preview-image {
+            display: none;
+        }
+    }
+}

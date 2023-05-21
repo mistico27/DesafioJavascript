@@ -1,0 +1,13 @@
+.post-card__author-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.post-card .post-card__author-name,
+.post-card .post-card__creation-date {
+  margin: 0;
+  font-size: 14px;
+}
+.post-card:not(:first-of-type) .post-card__preview-image {
+  display: none;
+}/*# sourceMappingURL=styles.css.map */
