@@ -11,3 +11,10 @@
 .post-card:not(:first-of-type) .post-card__preview-image {
   display: none;
 }/*# sourceMappingURL=styles.css.map */
+
+
+
+.col-md-5 {
+    flex: 0 0 auto;
+    width: 100%;
+}
