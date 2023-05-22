@@ -1,17 +1,17 @@
 ///primero pondremos el endpoint
-const BASE_URL ='https://caballeroszodiaco-bb6c6-default-rtdb.firebaseio.com';
-//crear el objeto de caballeros y el id
-let knightObject={};
-let knoghts=[];
-let knightId =null;
+const BASE_URL ='https://javascriptdesafio-default-rtdb.firebaseio.com';
+//crear el objeto de Post y el id
+let postObject={};
+let postCard=[];
+let postCardId =null;
 
-///funcionalidades
+///Show Alert 
 function showAlert(message,className){
   const div=document.createElement('div');
   div.className=`alert alert-${className}`;
   div.appendChild(document.createTextNode(message));
   const container =document.querySelector('.container');
-  const form = document.querySelector('#zodiac-form');
+  const form = document.querySelector('#Postcard-form');
   
   form.parentNode.insertBefore(div,form);
 
@@ -33,26 +33,27 @@ function containsNumbers(str){
 
 
 ///Save and Edit
-const saveKnight= async (knight,knightId)=>{
-  if(knight.nombre ===''|| knight.signo===''||knight.picture===''||knight.orden===''||knight.tecnica===''){
-    showAlert('please fill the form','danger');  
-    } else if(containsSpecialChars(knight.nombre)||containsSpecialChars(knight.signo)||containsSpecialChars(knight.tecnica)||containsSpecialChars(knight.orden)){
-      showAlert('please Do not set special charcateres','danger');
-    }else if(containsNumbers(knight.nombre)||containsNumbers(knight.signo)||containsNumbers(knight.orden)){
-      showAlert('please Do not set numbers','danger');
+const savePostCard= async (ThePostCard,postCardId)=>{
+  if(ThePostCard.autor ===''|| ThePostCard.titulo===''||ThePostCard.picture===''||ThePostCard.tags===''||ThePostCard.postBody===''){
+    showAlert('please fill  all the form','danger');  
+    } else if(containsSpecialChars(ThePostCard.autor)){
+      showAlert('please Autor´s Name must not have special characters','danger');
+    }else if(containsNumbers(ThePostCard.autor)){
+      showAlert('please Do not set numbers for Author´s Name','danger');
     }else{
   
-    if(knightId){
-      let response = await fetch(`${BASE_URL}/${knightId}/.json`,{
+    if(postCardId){
+      let response = await fetch(`${BASE_URL}/${postCardId}/.json`,{
         method:'PUT',
-        body:JSON.stringify(knight),
+        body:JSON.stringify(ThePostCard),
       });
       let data= await response.json();
       return data;
     }else{
+      ///Edit function
       let response =await fetch(`${BASE_URL}/.json`,{
         method:'POST',
-        body:JSON.stringify(knight),
+        body:JSON.stringify(ThePostCard),
       });
       let data= await response.json();
       return data;
@@ -62,14 +63,15 @@ const saveKnight= async (knight,knightId)=>{
 };
 
 ///Mandar llamar el metodo
-document.getElementById('save-knight').addEventListener("click",async(event)=>{
+document.getElementById('save-card').addEventListener("click",async(event)=>{
   event.preventDefault();
-  document.querySelectorAll('#zodiac-form input').forEach((item)=>{
-    knightObject[item.name]=item.value;
+  document.querySelectorAll('#Postcard-form input').forEach((item)=>{
+    postObject[item.name]=item.value;
   });
-  let response = await saveKnight(knightObject,knightId);
+  let response = await savePostCard(postObject,postCardId);
   if(response){
-    printAllKnights('caballeros-list');
+    window.location.replace(`./Index.html`);
+    //print the ´postCards
   }
 knightId=null;
 cleanForm();
@@ -77,12 +79,12 @@ cleanForm();
 });
 
 const cleanForm =()=>{
-  let inputs=document.querySelectorAll('#zodiac-form input');
+  let inputs=document.querySelectorAll('#Postcard-form input');
   inputs.forEach(item =>item.value="")
 }
 
 ///create card
-
+/*
 const createKnightCard=(KnightData,knightkey)=>{
   let {nombre,orden,picture,signo,tecnica}=KnightData;
   let cardcol=document.createElement("div");
@@ -290,3 +292,4 @@ reverseButton.addEventListener('click',(e)=>{
   e.preventDefault();
   printSortAllKnights("caballeros-list");
 });
+*/
