@@ -85,20 +85,37 @@
     background-color: #0a3e4a;
     color: white;
 }
+.btn-greenAqua:hover {
+  background-color: #05313b;
+  color: white;
+}
 
 .btn-gray2 {
     background-color: #24292e;
     color: white;
+}
+.btn-gray2:hover {
+  background-color: #000;
+  color: white;
 }
 
 .btn-blue2 {
     background-color: #1da1f2;
     color: white;
 }
+.btn-blue2:hover {
+  background-color:#0096f2;
+  color: white;
+}
 
 .btn-purple2 {
     background-color: #3b49df;
     color: white;
+}
+
+.btn-purple2:hover {
+  background-color: #2f3ab2;
+  color: white;
 }
 
 h1 .strong {
@@ -108,3 +125,23 @@ h1 .strong {
 .c3 input:checked ~ .checkmark {
     background-color: #3b49df;
     }
+    /* creamos el marcador (escondido al no seleccionar) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* mostramos el marcador al seleccionar */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* creamos un custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
