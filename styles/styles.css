@@ -18,3 +18,8 @@
     flex: 0 0 auto;
     width: 100%;
 }
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 100.333333%;
+}
