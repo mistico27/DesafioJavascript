@@ -24,7 +24,7 @@ function containsSpecialChars(str) {
   const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
   return specialChars.test(str);
 }
-
+///numbers
 function containsNumbers(str){
   const numbers = /[1234567890]/;
   return numbers.test(str);
