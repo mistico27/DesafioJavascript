@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #f5f5f5;
+  font-size: 18px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  width: 100%;
+}
+
+.container-fluid1__position {
+  justify-content: center;
+  margin-top: 35px;
+  background-color: white;
+  border-color: gray;
+  position: fixed;
+  z-index: 1;
+}
+
+.navbar1__logo {
+  width: 50px;
+  height: 40px;
+}
+
+.navbar2__button {
+  border-radius: 7px;
+  border-color: rgb(59, 59, 246);
+  border-width: 2px;
+  background-color: white;
+  color: rgb(59, 59, 246);
+}
+.navbar2__button:hover {
+  background: rgb(59, 59, 246);
+  color: white;
+  text-decoration: underline;
+}
+.navbar2__notificacion {
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+.navbar2__notificacion:hover {
+  background-color: rgba(197, 185, 246, 0.433);
+  color: rgb(59, 59, 246);
+}
+.navbar2__button3 {
+  border: none;
+  background-color: white;
+}
+
+.navbar3__user-picture {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+.navbar3__user-picture:hover {
+  border-color: aqua;
+  border-style: solid;
+  border: 4px;
+}
+
+#iconos {
+  left: 35%;
+}
+
+.post-card__author-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.post-card .post-card__author-name,
+.post-card .post-card__creation-date {
+  margin: 0;
+  font-size: 14px;
+}
+.post-card:not(:first-of-type) .post-card__preview-image {
+  display: none;
+}/*# sourceMappingURL=styles.css.map */
