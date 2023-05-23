@@ -281,3 +281,11 @@ TopCardButton.addEventListener('click',(e)=>{
   e.preventDefault();
   printTopPostCards("PostCard-list")
 });
+
+
+///getformCard
+const getFormButton =document.getElementById("formCard");
+getFormButton.addEventListener('click',(e)=>{
+  e.preventDefault();
+  window.location.replace('./form.html');
+});
