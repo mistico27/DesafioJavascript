@@ -1,3 +1,4 @@
+
 ///primero pondremos el endpoint
 const BASE_URL ='https://javascriptdesafio-default-rtdb.firebaseio.com';
 //crear el objeto de Post y el id
@@ -83,6 +84,19 @@ const cleanForm =()=>{
   inputs.forEach(item =>item.value="")
 }
 
+let params = new URLSearchParams(document.location.search)
+postCardId = params.get("postCardId");
+ console.log(postCardId);
+const getPostCardInfo = async(id) => {
+  let response = await fetch(`${BASE_URL}/${id}.json`)
+  let data = await response.json()
+  let listInput =document.querySelectorAll("form input");
+    listInput.forEach(item=>{
+      item.value=data[item.name];
+    });
+  return data
+}
+getPostCardInfo(postCardId);
 ///create card
 /*
 const createKnightCard=(KnightData,knightkey)=>{

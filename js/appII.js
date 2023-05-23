@@ -1,6 +1,6 @@
 const BASE_URL ='https://javascriptdesafio-default-rtdb.firebaseio.com';
 ///create card
-
+let postCardId =null;
 const createPostCard=(postCardData,postCardkey)=>{
   let {autor,titulo,picture,tags,postBody}=postCardData;
   let cardcol=document.createElement("div");
@@ -71,13 +71,13 @@ deleteButton.append(deleteText);
 deleteButton.addEventListener("click",()=>{
     deletePostCard(postCardkey);
 });
-
+//fiuncion para editar
 let modifiedButton =document.createElement("button");
 modifiedButton.classList.add("btn","btn-primary");
 let modifiedText =document.createTextNode("Modificar");
 modifiedButton.append(modifiedText);
 modifiedButton.addEventListener("click",()=>{
-modifiedPostCard(postCardkey);
+window.location.replace(`./form.html?postCardId=${postCardkey}`);
 
 });
 
@@ -133,12 +133,34 @@ const getAllpostCards =async ()=>{
   
   
   printAllPostCards("PostCard-list");
+
+
+
+///delete Post
+const deletePostCard =async (postCardkey) =>{
+    let response =await fetch(`${BASE_URL}/${postCardkey}/.json`,{
+      method:"DELETE",
+    });
+    let data =await response.json();
+    printAllPostCards("PostCard-list");
+  
+  };
+  
+///modified Post
+const modifiedPostCard =async(postCardkey)=>{
+    postCardId=postCardkey;
+    let newResponse = await fetch(`${BASE_URL}/${postCardId}/.json`);
+    let newData = await newResponse.json();
+    let listInput =document.querySelectorAll("form input");
+    listInput.forEach(item=>{
+      item.value=newData[item.name];
+    });
+
+  };
+
   
   ///search PostCard
 const PostSearchInput =document.querySelector("[data-search]");
-
-
-
 PostSearchInput.addEventListener("input",(e)=>{
   const value = e.target.value.toLowerCase();
   const storeItems =document.getElementById('PostCard-list');
@@ -162,3 +184,6 @@ PostSearchInput.addEventListener("input",(e)=>{
 
 
 });
+
+
+
