@@ -31,12 +31,28 @@ const createPostCard=(postCardData,postCardkey)=>{
     "justify-content-between"
   );
 
+///date creation
+let today = new Date(); 
+// `getDate()` devuelve el día del mes (del 1 al 31)
+let day = today.getDate();
+// `getMonth()` devuelve el mes (de 0 a 11)
+let month = today.getMonth() + 1;
+// `getFullYear()` devuelve el año completo
+let year = today.getFullYear();
+///get full Date
+let fullDate = `${month}/${day}/${year}`
+
+
   
 let cardAutor = document.createElement("h5");
 cardAutor.classList.add("card-title");
 let cardTitleText = document.createTextNode(` ${autor}`);
 cardAutor.append(cardTitleText);
 
+let cardDate =document.createElement("h7");
+cardDate.classList.add("card-text0");
+let cardDateText = document.createTextNode(fullDate);
+cardDate.append(cardDateText);
 
 let cardPostTitle =document.createElement("h3");
 cardPostTitle.classList.add("card-text");
@@ -95,7 +111,7 @@ detailButton.addEventListener("click",()=>{
 
 /////////card Creation///////////
 buttonWrapper.append(deleteButton,modifiedButton,detailButton);
-cardBody.append(cardAutor,cardPostTitle,cardPostTags,cardPostBody,buttonWrapper);
+cardBody.append(cardAutor,cardDate,cardPostTitle,cardPostTags,cardPostBody,buttonWrapper);
 contentCol.append(cardBody);
 imageCol.append(cardPicture);
 cardRow.append(imageCol,contentCol);
@@ -127,10 +143,6 @@ const getAllpostCards =async ()=>{
     }
   
   };
-  
-  
-  
-  
   
   printAllPostCards("PostCard-list");
 
@@ -177,12 +189,35 @@ PostSearchInput.addEventListener("input",(e)=>{
 
         }else{
           product[i].style.display="none";
-
         }
     }
   }
+});
 
+///print All sortCards
+const printSortAllPostCards =async (listId)=>{
+ 
+  let sortCards =await getAllpostCards();
+  const newSortArray =Object.values(sortCards).reverse();
 
+  var JsonObject = JSON.parse(JSON.stringify(newSortArray));
+  console.log(JsonObject);
+ let listWrapper =document.getElementById(listId);
+ while(listWrapper.firstChild){
+   listWrapper.removeChild(listWrapper.firstChild);
+ }
+ for (key in JsonObject ){
+   let newSortCardData = JsonObject[key];
+   let card=createPostCard(newSortCardData,key);
+   listWrapper.appendChild(card);
+ }
+
+};
+
+const reverseButton =document.getElementById("find-latest");
+reverseButton.addEventListener('click',(e)=>{
+  e.preventDefault();
+  printSortAllPostCards("PostCard-list");
 });
 
 

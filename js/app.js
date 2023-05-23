@@ -74,7 +74,7 @@ document.getElementById('save-card').addEventListener("click",async(event)=>{
     window.location.replace(`./Index.html`);
     //print the ´postCards
   }
-knightId=null;
+postCardId=null;
 cleanForm();
 
 });
@@ -97,6 +97,10 @@ const getPostCardInfo = async(id) => {
   return data
 }
 getPostCardInfo(postCardId);
+
+
+
+
 ///create card
 /*
 const createKnightCard=(KnightData,knightkey)=>{
