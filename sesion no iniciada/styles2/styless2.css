@@ -19,6 +19,8 @@ body {
   border-color: gray;
   position: fixed;
   z-index: 1;
+  padding-right: 68px;
+  padding-left: 68px;
 }
 
 .navbar1__logo {

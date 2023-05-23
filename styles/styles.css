@@ -14,12 +14,13 @@ body {
 }
 
 .container-fluid1__position {
-  justify-content: center;
   margin-top: 35px;
   background-color: white;
   border-color: gray;
   position: fixed;
   z-index: 1;
+  padding-right: 68px;
+  padding-left: 68px;
 }
 
 .navbar1__logo {
