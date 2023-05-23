@@ -250,4 +250,34 @@ const RelevantButton =document.getElementById("find-relevant");
 RelevantButton.addEventListener('click',(e)=>{
   e.preventDefault();
   printRelevantPostCards("PostCard-list")
-})
+});
+
+///sort for top Data
+const printTopPostCards =async (listId)=>{
+ 
+  let sortTopCards =await getAllpostCards();
+  ///convertir a un arreglo
+  const newSortArray =Object.values(sortTopCards);
+  
+  var Newapostcard =  newSortArray.filter(function(newSortArray) {
+    return newSortArray.autor == "christian Beltran"|| newSortArray.autor == "Israel Salians";
+  });
+
+  var JsonObject = JSON.parse(JSON.stringify(Newapostcard));
+ let listWrapper =document.getElementById(listId);
+ while(listWrapper.firstChild){
+   listWrapper.removeChild(listWrapper.firstChild);
+ }
+ for (key in JsonObject ){
+   let newSortCardData = JsonObject[key];
+   let card=createPostCard(newSortCardData,key);
+   listWrapper.appendChild(card);
+ }
+};
+
+
+const TopCardButton =document.getElementById("find-top");
+TopCardButton.addEventListener('click',(e)=>{
+  e.preventDefault();
+  printTopPostCards("PostCard-list")
+});
