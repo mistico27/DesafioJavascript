@@ -12,3 +12,21 @@ let fullDate = `${month}/${day}/${year}`
 
 console.log(fullDate);
  
+function isBigEnough(value) {
+    return value >= 10;
+  }
+  
+  const filtered = console.log([12, 5, 8, 130, 44].filter(isBigEnough));
+  // filtered is [12, 130, 44]
+
+
+
+  var creatures = [
+    {name: "Shark", habitat: "Ocean"},
+    {name: "Whale", habitat: "Ocean"},
+    {name: "Lion", habitat: "Savanna"},
+    {name: "Monkey", habitat: "Jungle"}
+  ];
+  var aquaticCreatures =  creatures.filter(function(creature) {
+    return creature.habitat == "Ocean";
+  });

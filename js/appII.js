@@ -201,7 +201,6 @@ const printSortAllPostCards =async (listId)=>{
   const newSortArray =Object.values(sortCards).reverse();
 
   var JsonObject = JSON.parse(JSON.stringify(newSortArray));
-  console.log(JsonObject);
  let listWrapper =document.getElementById(listId);
  while(listWrapper.firstChild){
    listWrapper.removeChild(listWrapper.firstChild);
@@ -220,5 +219,35 @@ reverseButton.addEventListener('click',(e)=>{
   printSortAllPostCards("PostCard-list");
 });
 
+////sort for relevant data
+function filterItems(arr, query) {
+  return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+}
+
+const printRelevantPostCards =async (listId)=>{
+ 
+  let sortCards =await getAllpostCards();
+  const newSortArray =Object.values(sortCards);
+  
+  var Newapostcard =  newSortArray.filter(function(newSortArray) {
+    return newSortArray.tags == "#comoEstas";
+  });
+
+  var JsonObject = JSON.parse(JSON.stringify(Newapostcard));
+ let listWrapper =document.getElementById(listId);
+ while(listWrapper.firstChild){
+   listWrapper.removeChild(listWrapper.firstChild);
+ }
+ for (key in JsonObject ){
+   let newSortCardData = JsonObject[key];
+   let card=createPostCard(newSortCardData,key);
+   listWrapper.appendChild(card);
+ }
+};
 
 
+const RelevantButton =document.getElementById("find-relevant");
+RelevantButton.addEventListener('click',(e)=>{
+  e.preventDefault();
+  printRelevantPostCards("PostCard-list")
+})
