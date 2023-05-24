@@ -21,7 +21,7 @@ function login(){
     console.log(pass)
     
     if (email == "daniel@123" && pass == 123 ) {
-         window.location.replace("./index.html");
+         window.location.replace("Index.html");
         localStorage.setItem(user,password)
     } else if(email === "" || pass === "" ){
         showAlert('campos nulos , favor de verificar','danger');
