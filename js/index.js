@@ -104,7 +104,7 @@ let ViewDetailText =document.createTextNode("Detalle");
 detailButton.append(ViewDetailText);
 
 detailButton.addEventListener("click",()=>{
-  window.location.replace('./detailedView.html');
+  window.location.replace(`./detailedView.html?postCardId=${postCardkey}`);
   
   });
 
