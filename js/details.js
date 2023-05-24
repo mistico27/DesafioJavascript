@@ -1,8 +1,10 @@
 const BASE_URL ='https://javascriptdesafio-default-rtdb.firebaseio.com';
 
 let params = new URLSearchParams(document.location.search)
-let cardId = params.get("Id");
-console.log(cardId);
+let postCardId = params.get("postCardId");
+ console.log(postCardId);
+
+
 const getCardInfo = async(id) => {
     let response = await fetch(`${BASE_URL}/${id}.json`)
     let data = await response.json()
@@ -10,9 +12,8 @@ const getCardInfo = async(id) => {
 }
 
 
-/*
 const printCard = async() => {
-    let CardInfo = await getPetInfo(postCardId)
+    let CardInfo = await getCardInfo(postCardId)
     let html = `<div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
@@ -20,7 +21,8 @@ const printCard = async() => {
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">Autor:${CardInfo.autor} Titulo: ${CardInfo.titulo}</h5>
+          <h5 class="card-title">Autor:${CardInfo.autor} </h5>
+          <h3 class="card-title">Titulo:${CardInfo.titulo} </h3>
           <p class="card-text">Origin: ${CardInfo.postBody}</p>
           <button class="btn btn-primary" id="backButton">Regresar</button>
         </div>
@@ -33,11 +35,10 @@ const printCard = async() => {
 
     let backButton = document.getElementById("backButton")
     backButton.addEventListener('click', (event) => {
-    window.location.replace("Index.html");
+    window.location.replace("./Index.html");
 })
 }
 
 
 printCard()
 
-*/
