@@ -16,7 +16,7 @@ const printCard = async() => {
     let CardInfo = await getCardInfo(postCardId)
     let html = `<div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
-      <div class="col-md-8">
+      <div class="col-md-12" style="align-item: center;">
         <img src=${CardInfo.picture} class="img-fluid rounded-start" style="height:100%" alt="...">
       </div>
       <div class="col-md-4">
