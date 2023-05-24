@@ -12,9 +12,10 @@ function showAlert(message,className){
     setTimeout(()=>document.querySelector('.alert').remove(),2500)
   
   }
-let statusSesion = localStorage.getItem("user","password");
+
+let statusSesion = localStorage.getItem("user");
 console.log(statusSesion);
-statusSesion ? console.log(statusSesion) : console.log("los datos no estan en local storange")
+statusSesion ? window.open("Index.html","_self") : null
 
 
 function login(){
