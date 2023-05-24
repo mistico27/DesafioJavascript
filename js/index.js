@@ -254,7 +254,7 @@ RelevantButton.addEventListener('click',(e)=>{
 
 ///sort for top Data
 const printTopPostCards =async (listId)=>{
- 
+ //objeto
   let sortTopCards =await getAllpostCards();
   ///convertir a un arreglo
   const newSortArray =Object.values(sortTopCards);
@@ -286,6 +286,12 @@ TopCardButton.addEventListener('click',(e)=>{
 ///getformCard
 const getFormButton =document.getElementById("formCard");
 getFormButton.addEventListener('click',(e)=>{
+  e.preventDefault();
+  window.location.replace('./form.html');
+});
+
+const getFormButtonII =document.getElementById("formCard2");
+getFormButtonII.addEventListener('click',(e)=>{
   e.preventDefault();
   window.location.replace('./form.html');
 });
