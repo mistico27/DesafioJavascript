@@ -11,11 +11,6 @@ const getAllUsers =async ()=>{
   };
 
   
-
-
-
-
-
 ///Show Alert 
 function showAlert(message,className){
     const div=document.createElement('div');
@@ -67,6 +62,8 @@ for(let z=0;z<emailArray.length;z++){
 }
 
 if(emailStatus&&passstatus){
+    let statusSesion = localStorage.setItem(email,pass);
+
     window.location.replace(`./Index.html`);
 }else if(email === "" || pass === "" ){
     showAlert('campos nulos , favor de verificar','danger');
