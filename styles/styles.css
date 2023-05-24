@@ -21,6 +21,7 @@ body {
   z-index: 1;
   padding-right: 68px;
   padding-left: 68px;
+  height: 65px;
 }
 
 .navbar1__logo {
@@ -68,8 +69,18 @@ body {
   border: 4px;
 }
 
-#iconos {
-  left: 35%;
+.searchbar__barrita {
+  border: none;
+}
+.searchbar__bar {
+  border-radius: 7px;
+  border-style: solid;
+  border-color: gray;
+}
+.searchbar__bar:hover {
+  border-color: rgb(59, 59, 246);
+  border-style: solid;
+  border-radius: 7px;
 }
 
 .post-card__author-picture {
