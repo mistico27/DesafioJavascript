@@ -1,5 +1,6 @@
 const BASE_URL ='https://javascriptdesafio-default-rtdb.firebaseio.com';
 ///create card
+let postCard=[];
 let postCardId =null;
 const createPostCard=(postCardData,postCardkey)=>{
   let {autor,titulo,picture,tags,postBody}=postCardData;
@@ -295,3 +296,95 @@ getFormButtonII.addEventListener('click',(e)=>{
   e.preventDefault();
   window.location.replace('./form.html');
 });
+
+
+////aside Derecho
+const createPostListing=(postCardData)=>{
+  let {autor,titulo,postBody}=postCardData;
+  let cardcol=document.createElement("div");
+
+  let cardWrapper = document.createElement("div");
+  cardWrapper.classList.add("postCardListing-card","card","mb-4");
+  
+  let cardRow = document.createElement("div");
+  cardRow.classList.add("row","g-0");
+
+  let contentCol = document.createElement("div");
+  contentCol.classList.add("col-md-4");
+
+  let cardBody = document.createElement("div");
+  cardBody.classList.add(
+    "card-body",
+    "h-100",
+    "d-flex",
+    "flex-column",
+    "justify-content-between"
+  );
+
+let cardAutor = document.createElement("h5");
+cardAutor.classList.add("card-title");
+let cardTitleText = document.createTextNode(` ${autor}`);
+cardAutor.append(cardTitleText);
+
+let cardPostTitle =document.createElement("h3");
+cardPostTitle.classList.add("card-text");
+let postName = document.createTextNode(` ${titulo}`);
+cardPostTitle.append(postName);
+
+let cardPostBody =document.createElement("p");
+cardPostBody.classList.add("card-textIII");
+let PostCardBody = document.createTextNode(`${postBody} `);
+cardPostBody.append(PostCardBody);
+
+/////////card Creation///////////
+cardBody.append(cardAutor,cardPostTitle,cardPostBody);
+contentCol.append(cardBody);
+cardRow.append(contentCol);
+cardWrapper.append(cardRow);
+cardcol.append(cardWrapper);
+return cardcol;
+
+};
+///llamar a la funcion
+  const getPostCardListings = async(listId) => {
+    let response = await getAllpostCards();
+    const newSortArray =Object.values(response);
+    var NewlistingCard =  newSortArray.filter(function(newSortArray) {
+      return newSortArray.tags == "#comoEstas";
+    });
+    var JsonObject = JSON.parse(JSON.stringify(NewlistingCard));
+    let listWrapper =document.getElementById(listId);
+    while(listWrapper.firstChild){
+      listWrapper.removeChild(listWrapper.firstChild);
+    }
+    for (key in JsonObject ){
+      let newSortCardData = JsonObject[key];
+      let card=createPostListing(newSortCardData);
+      listWrapper.appendChild(card);
+    }
+   
+  }
+  getPostCardListings("PostCard-listing");
+
+///listings autor
+const getPostCardListingsAutor = async(listId) => {
+  let response = await getAllpostCards();
+  const newSortArray =Object.values(response);
+  var NewlistingCard =  newSortArray.filter(function(newSortArray) {
+    return newSortArray.autor == "Mara";
+  });
+  console.log(NewlistingCard);
+  var JsonObject = JSON.parse(JSON.stringify(NewlistingCard));
+  let listWrapper =document.getElementById(listId);
+  while(listWrapper.firstChild){
+    listWrapper.removeChild(listWrapper.firstChild);
+  }
+  for (key in JsonObject ){
+    let newSortCardData = JsonObject[key];
+    let card=createPostListing(newSortCardData);
+    listWrapper.appendChild(card);
+  }
+ 
+}
+
+getPostCardListingsAutor("PostCard-listingII");
