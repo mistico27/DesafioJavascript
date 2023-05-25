@@ -12,13 +12,13 @@ body {
   width: 100%;
 }
 
-.container-fluid1__position {
-  margin-top: 35px;
+.container-fluid {
+  margin-top: 40px;
   background-color: white;
   border-color: gray;
   position: fixed;
   z-index: 1;
-  padding-right: 68px;
+  padding-right: 10px;
   padding-left: 68px;
   height: 65px;
 }
@@ -56,6 +56,19 @@ body {
   border: none;
   background-color: white;
 }
+.navbar2__login {
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+.navbar2__login:hover {
+  background-color: rgba(197, 185, 246, 0.433);
+  color: rgb(59, 59, 246);
+  text-decoration: underline;
+}
 
 .navbar3__user-picture {
   border-radius: 100%;
@@ -75,13 +88,14 @@ body {
   border-radius: 7px;
   border-style: solid;
   border-color: gray;
+  background-color: white;
 }
 .searchbar__bar:hover {
   border-color: rgb(59, 59, 246);
   border-style: solid;
   border-radius: 7px;
 }
-/*acaba mara*/
+
 .post-card__author-picture {
   width: 40px;
   height: 40px;
@@ -467,179 +481,3 @@ p img {
 .avatar-marg {
   margin-right: 10px;
 }/*# sourceMappingURL=styles.css.map */
-/*termina luis*/
-
-/*chris form*/
-.col-md-5 {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.col-md-4 {
-flex: 0 0 auto;
-width: 100.333333%;
-}
-
-/*termina chris**/
-
-.footer {
-  background: #e5e5e5;
-  max-width: 100%;
-  margin: 0 auto;
-  color: gray;
-  padding: 0%;
-  margin-top: auto;
-}
-
-.containerf {
-  background: #e5e5e5;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0%;
-  display: flex;
-}
-
-.footer-row {
-  display: flex;
-  margin-bottom: 50px;
-  margin: 0 auto;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 50px 30px 20px;
-}
-
-.footer-row a {
-  color: #5d66d5;
-}
-
-.footer-links {
-  margin: auto 10%;
-}
-
-.footer-links ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-}
-
-.footer-links ul li a {
-  color: #5d66d5;
-  margin: 10px;
-}
-
-.footerBottom {
-  margin-bottom: 50px;
-  margin-top: 0 auto;
-}
-
-.footerBottom p {
-  justify-content: center;
-} /*# sourceMappingURL=styles.css.map */
-
-.lineGray {
-  font-size: 12px;
-  position: relative;
-  text-align: center;
-}
-
-.lineGray p::before {
-  text-align: center;
-  content: "────── ";
- 
-  }
-
-.lineGray p::after {
-  text-align: center;
-  content: " ──────";
-
-}
-
-.textCenter {
-  font-size: 13px;
-  text-align: center;
-  align-items: center;
-  
-}
-.titleHeader {
-  text-align: center;
-}
-
-.btn-greenAqua {
-  background-color: #0a3e4a;
-  color: white;
-}
-.btn-greenAqua:hover {
-background-color: #05313b;
-color: white;
-}
-
-.btn-gray2 {
-  background-color: #24292e;
-  color: white;
-}
-.btn-gray2:hover {
-background-color: #000;
-color: white;
-}
-
-.btn-blue2 {
-  background-color: #1da1f2;
-  color: white;
-}
-.btn-blue2:hover {
-background-color:#0096f2;
-color: white;
-}
-
-.btn-purple2 {
-  background-color: #3b49df;
-  color: white;
-}
-
-.btn-purple2:hover {
-background-color: #2f3ab2;
-color: white;
-}
-
-h1 .strong {
-  font-weight: bold;
-}
-
-.c3 input:checked ~ .checkmark {
-  background-color: #3b49df;
-  }
-  /* creamos el marcador (escondido al no seleccionar) */
-.checkmark:after {
-content: "";
-position: absolute;
-display: none;
-}
-/* mostramos el marcador al seleccionar */
-.container input:checked ~ .checkmark:after {
-display: block;
-}
-
-/* creamos un custom checkbox */
-.checkmark {
-position: absolute;
-top: 0;
-left: 0;
-height: 25px;
-width: 25px;
-background-color: #eee;
-}
-
-.navbar2__login {
-  color: black;
-  margin: 0 10px;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-}
-.navbar2__login:hover {
-  background-color: rgba(197, 185, 246, 0.433);
-  color: rgb(59, 59, 246);
-  text-decoration: underline;
-}

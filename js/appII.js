@@ -289,3 +289,9 @@ getFormButton.addEventListener('click',(e)=>{
   e.preventDefault();
   window.location.replace('./form.html');
 });
+
+const getFormButton2 =document.getElementById("formCard2");
+getFormButton2.addEventListener('click',(e)=>{
+  e.preventDefault();
+  window.location.replace('./form.html');
+});

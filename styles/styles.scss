@@ -12,17 +12,15 @@
     width: 100%;
     }
 
-.container-fluid1 { 
-    &__position {
-        margin-top: 35px;
-        background-color: white; 
-        border-color: gray; 
-        position: fixed; 
-        z-index: 1;
-        padding-right: 68px;
-        padding-left: 68px;
-        height: 65px;
-    }
+.container-fluid { 
+    margin-top: 40px;
+    background-color: white; 
+    border-color: gray; 
+    position: fixed;
+    z-index: 1;
+    padding-right: 10px;
+    padding-left: 68px;
+    height: 65px;
 }
 
 .navbar1 {
@@ -61,7 +59,20 @@
     &__button3 {
         border: none;
         background-color: white;
-    }    
+    }   
+    &__login {
+        color: black;
+        margin: 0 10px;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        background-color: white;
+    }
+&__login:hover {
+        background-color: rgba(197, 185, 246, 0.433);
+        color:rgb(59, 59, 246);
+        text-decoration: underline;
+    } 
     }
 
 .navbar3 {
@@ -84,6 +95,7 @@
         border-radius: 7px;
         border-style: solid;
         border-color: gray;
+        background-color: white;
     }
     &__bar:hover{
         border-color: rgb(59, 59, 246);
