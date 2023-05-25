@@ -30,3 +30,8 @@ function isBigEnough(value) {
   var aquaticCreatures =  creatures.filter(function(creature) {
     return creature.habitat == "Ocean";
   });
+
+
+  const arr = [ 5, 3, 2, 7, 8 ];
+const last = arr[arr.length-1];
+console.log(last);
