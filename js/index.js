@@ -226,14 +226,15 @@ function filterItems(arr, query) {
 }
 
 const printRelevantPostCards =async (listId)=>{
- 
+ //objeto
   let sortCards =await getAllpostCards();
+  //arreglo
   const newSortArray =Object.values(sortCards);
   
   var Newapostcard =  newSortArray.filter(function(newSortArray) {
     return newSortArray.tags == "#comoEstas";
   });
-
+  //objeto
   var JsonObject = JSON.parse(JSON.stringify(Newapostcard));
  let listWrapper =document.getElementById(listId);
  while(listWrapper.firstChild){
