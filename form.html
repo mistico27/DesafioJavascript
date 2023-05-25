@@ -14,48 +14,40 @@
     <!----------------------- Nav bar ------------------------------>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid1__position container-fluid">
+        <div class="container-fluid flex-nowrap">
           <a class="navbar-brand" href="Index.html"><img class="navbar1__logo"  src="assets/resized_logo_UQww2soKuUsjaOGNB38o.png"></a>
-          <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex justify-content-between w-100">
                 <form class="d-flex" role="search">
-                    <div class="searchbar__bar input-group">
-                    <input class="searchbar__barrita" placeholder="Search..." size="40px" class="card-filter" id="search-item" data-search aria-label="Search">
+                    <div class="searchbar__bar input-group d-none d-md-block">
+                    <input class="searchbar__barrita" placeholder="Search..." size="30px" class="card-filter" id="search-item" data-search aria-label="Search">
                     <button class="searchbar__lupa btn btn" type="button" id="button-addon2"><img class="Search1__icons" src="assets/search.svg"></button>
                     </div>
                 </form>
-                <div class="navbar2__icons d-flex" id="iconos">
+                <div class="navbar2__icons d-flex" id="iconos" >
+                    <button class="navbar2__notificacion btn btn d-md-none d-xl-none d-lg-none" type="button" id="button-addon2"><img class="Search1__icons" src="assets/search.svg"></button>
                     <button class="navbar2__notificacion"><i class="fa fa-bell-o" aria-hidden="true"></i></button>
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" style="color: white;" style="border: none;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="navbar3__user-picture" src="https://randomuser.me/api/portraits/men/14.jpg">
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Avengers</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                              <li><button class="dropdown-item" id="formCard2">Create Post</button></li>
-                              <li><a class="dropdown-item" href="#">Reading list</a></li>
-                              <li><a class="dropdown-item" href="#">Settings</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="sesion no iniciada/index2.html">Sign Out</a></li>
-                            </ul>
-                        </div>                </div>
+                    <button class="btn dropdown-toggle" style="color: white;" style="border: none;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="navbar3__user-picture" src="https://randomuser.me/api/portraits/men/14.jpg">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Avengers</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                          <li><button class="dropdown-item" id="formCard2">Create Post</button></li>
+                          <li><a class="dropdown-item" href="#">Reading list</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="sesion no iniciada/index2.html">Sing Out</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
       </nav>
     <div class="container pt-5">
         <div class="row">
-
             <!-------------------- Aside Izquierdo --------------------->
 
             <div class="col-12 col-md-3 d-none d-md-block">
