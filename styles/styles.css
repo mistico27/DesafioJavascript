@@ -228,6 +228,7 @@ p img {
   flex-direction: row;
   align-items: center;
   padding-bottom: 0px;
+  justify-content: space-between;
 }
 
 .estilo-list {
@@ -390,7 +391,14 @@ p img {
 }
 
 /* Aside Derecho */
-.content-right-info1, .content-right-info2, .content-right-info3 {
+.card-aside-right {
+  margin-bottom: 16px;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.card-aside-right, .content-right-info1, .content-right-info2, .content-right-info3 {
   background-color: #ffffff;
 }
 
