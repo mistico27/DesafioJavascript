@@ -474,8 +474,18 @@ p img {
   padding: 12px;
 }
 
+<<<<<<< HEAD
 .card-aside-right, .content-right-info1, .content-right-info2, .content-right-info3 {
   background-color: #ffffff;
+=======
+.mb-4 {
+  margin-bottom: 0rem!important;
+}
+
+.col-md-4 {
+flex: 0 0 auto;
+width: 100.333333%;
+>>>>>>> origin/ramaCompleta
 }
 
 .header-list-group-listings {
