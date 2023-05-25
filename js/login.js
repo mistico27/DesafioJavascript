@@ -35,6 +35,7 @@ continueBotton.addEventListener('click',async (e)=>{
  let pass = document.getElementById("InputPassword").value;
   e.preventDefault();
   let UserInfo = await getAllUsers();
+  console.log(UserInfo);
   const newSortArray =Object.values(UserInfo);
 
   let passArray=[];
