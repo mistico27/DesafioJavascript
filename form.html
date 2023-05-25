@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://kit.fontawesome.com/42388cee6d.js" crossorigin="anonymous"></script>
+    <title>Formulario Post</title>
+</head>
+<body>
+    
+    <!----------------------- Nav bar ------------------------------>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid1__position container-fluid">
+          <a class="navbar-brand" href="Index.html"><img class="navbar1__logo"  src="assets/resized_logo_UQww2soKuUsjaOGNB38o.png"></a>
+          <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex justify-content-between w-100">
+                <form class="d-flex" role="search">
+                    <div class="searchbar__bar input-group">
+                    <input class="searchbar__barrita" placeholder="Search..." size="40px" class="card-filter" id="search-item" data-search aria-label="Search">
+                    <button class="searchbar__lupa btn btn" type="button" id="button-addon2"><img class="Search1__icons" src="assets/search.svg"></button>
+                    </div>
+                </form>
+                <div class="navbar2__icons d-flex" id="iconos">
+                    <button class="navbar2__notificacion"><i class="fa fa-bell-o" aria-hidden="true"></i></button>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" style="color: white;" style="border: none;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="navbar3__user-picture" src="https://randomuser.me/api/portraits/men/14.jpg">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Avengers</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                              <li><button class="dropdown-item" id="formCard2">Create Post</button></li>
+                              <li><a class="dropdown-item" href="#">Reading list</a></li>
+                              <li><a class="dropdown-item" href="#">Settings</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="sesion no iniciada/index2.html">Sign Out</a></li>
+                            </ul>
+                        </div>                </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="container pt-5">
+        <div class="row">
+
+            <!-------------------- Aside Izquierdo --------------------->
+
+            <div class="col-12 col-md-3 d-none d-md-block">
+               
+            </div>
+
+            <!------------------ Columna Central ---------------------->
+            <div class="col-12 col-md-9 col-lg-6">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <form id="Postcard-form" action="" class="bg-dark text-white border rounded p-3 mb-3">
+                                <div class="form-group mb-3">
+                                    <label for="">autor</label>
+                                    <input name="autor" id="autor" type="text" class="form-control" placeholder="autor">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">titulo</label>
+                                    <input name="titulo" id="titulo" type="text" class="form-control" placeholder="titulo">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">TAGS</label>
+                                    <input name="tags" id="tags" type="text" class="form-control" placeholder="pon tu Tag">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">Foto</label>
+                                    <input name="picture" id="picture" type="text" class="form-control">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">PostBody</label> 
+                                <input type="text" class="form-control" id="postBody" name="postBody" placeholder="postbody">
+                                </div>
+                                <button id="save-card" class="btn btn-primary">save card</button>
+            
+                                </form>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+
+            <!------------------- Aside Derecho ------------------------->
+
+            <div class="col-12 col-lg-3 d-none d-lg-block">
+             
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="js\form.js" type="module"></script>
+</body>
+</html>
