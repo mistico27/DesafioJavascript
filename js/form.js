@@ -99,4 +99,8 @@ getPostCardInfo(postCardId);
 
 
 
-
+const returnButton =document.getElementById('return-card');
+returnButton.addEventListener('click', e=>{
+e.preventDefault();
+window.location.replace("Index.html");
+});

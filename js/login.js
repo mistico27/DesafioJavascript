@@ -63,9 +63,10 @@ for(let z=0;z<emailArray.length;z++){
 }
 
 if(emailStatus&&passstatus){
-    let statusSesion = localStorage.setItem(email,pass);
+    let statusSesion = localStorage.setItem(email, pass);
+    localStorage.setItem('isLoggedIn', 'true');
+    window.location.replace("Index.html");
 
-    window.location.replace(`./Index.html`);
 }else if(email === "" || pass === "" ){
     showAlert('campos nulos , favor de verificar','danger');
 }else { 
