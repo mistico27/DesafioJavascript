@@ -1,4 +1,4 @@
-const BASE_URL ='https://javascriptdesafio-default-rtdb.firebaseio.com/users/';
+const BASE_URL ='https://retojs-g25-default-rtdb.firebaseio.com/users/';
 //https://javascriptdesafio-default-rtdb.firebaseio.com/users
 let statusSesion = localStorage.getItem("user");
 console.log(statusSesion);
@@ -61,6 +61,7 @@ continueBotton.addEventListener("click", async (e) => {
 
   if (emailStatus && passstatus) {
     let statusSesion = localStorage.setItem(email, pass);
+    localStorage.setItem('isLoggedIn', 'true');
     window.location.replace("Index.html");
     
   } else if (email === "" || pass === "") {
