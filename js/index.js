@@ -47,13 +47,9 @@ let fullDate = `${month}/${day}/${year}`
   
 let cardAutor = document.createElement("h5");
 cardAutor.classList.add("card-title");
-let cardTitleText = document.createTextNode(` ${autor}`);
+let cardTitleText = document.createTextNode(` ${autor} ${fullDate} `);
 cardAutor.append(cardTitleText);
 
-let cardDate =document.createElement("h7");
-cardDate.classList.add("card-text0");
-let cardDateText = document.createTextNode(fullDate);
-cardDate.append(cardDateText);
 
 let cardPostTitle =document.createElement("h3");
 cardPostTitle.classList.add("card-text");
@@ -112,7 +108,7 @@ detailButton.addEventListener("click",()=>{
 
 /////////card Creation///////////
 buttonWrapper.append(deleteButton,modifiedButton,detailButton);
-cardBody.append(cardAutor,cardDate,cardPostTitle,cardPostTags,cardPostBody,buttonWrapper);
+cardBody.append(cardAutor,cardPostTitle,cardPostTags,cardPostBody,buttonWrapper);
 contentCol.append(cardBody);
 imageCol.append(cardPicture);
 cardRow.append(imageCol,contentCol);
@@ -230,9 +226,8 @@ const printRelevantPostCards =async (listId)=>{
   let sortCards =await getAllpostCards();
   //arreglo
   const newSortArray =Object.values(sortCards);
-  
   var Newapostcard =  newSortArray.filter(function(newSortArray) {
-    return newSortArray.tags == "#comoEstas";
+    return newSortArray.tags == "#css" || newSortArray.tags == "#Javascript" || newSortArray.tags=="#Chrome";
   });
   //objeto
   var JsonObject = JSON.parse(JSON.stringify(Newapostcard));
@@ -262,7 +257,7 @@ const printTopPostCards =async (listId)=>{
   const newSortArray =Object.values(sortTopCards);
   
   var Newapostcard =  newSortArray.filter(function(newSortArray) {
-    return newSortArray.autor == "christian Beltran"|| newSortArray.autor == "Israel Salians";
+    return newSortArray.autor == "Marie Curie"|| newSortArray.autor == "Nikola Tesla";
   });
 
   var JsonObject = JSON.parse(JSON.stringify(Newapostcard));
@@ -363,7 +358,7 @@ const getPostCardRight= async(listId) => {
   const newSortArray =Object.values(sortCards);
   
   var Newapostcard =  newSortArray.filter(function(newSortArray) {
-    return newSortArray.tags == "#comoEstas";
+    return newSortArray.tags == "#Javascript";
   });
   var JsonObject = JSON.parse(JSON.stringify(Newapostcard[Newapostcard.length-1]));
   console.log(JsonObject);
@@ -431,7 +426,7 @@ return cardcol;
     let response = await getAllpostCards();
     const newSortArray =Object.values(response);
     var NewlistingCard =  newSortArray.filter(function(newSortArray) {
-      return newSortArray.tags == "#comoEstas";
+      return newSortArray.tags == "#Javascript";
     });
     var JsonObject = JSON.parse(JSON.stringify(NewlistingCard));
     let listWrapper =document.getElementById(listId);
@@ -452,7 +447,7 @@ const getPostCardListingsAutor = async(listId) => {
   let response = await getAllpostCards();
   const newSortArray =Object.values(response);
   var NewlistingCard =  newSortArray.filter(function(newSortArray) {
-    return newSortArray.autor == "Mara";
+    return newSortArray.autor == "Marie Curie";
   });
   var JsonObject = JSON.parse(JSON.stringify(NewlistingCard));
   let listWrapper =document.getElementById(listId);

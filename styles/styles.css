@@ -491,7 +491,13 @@ width: 100.333333%;
   justify-content: space-around;
 } 
 
-
+.card-body {
+  margin-left: 50px;
+}
+.post-card__author-picture {
+  margin-left: 25px;
+  margin-top: 25px;
+}
 /*termina chris**/
 
 .footer {
